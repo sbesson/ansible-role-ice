@@ -1,8 +1,7 @@
 ---
 # vars file for roles/ice
 
-# TODO: I can't get https to work :-(
-ice_repourl: http://zeroc.com/download/rpm/el7/zeroc-ice-el7.repo
+ice_repourl: https://zeroc.com/download/rpm/el7/zeroc-ice-el7.repo
 ice_runtime_packages:
   - ice-all-runtime
 ice_devel_packages:
