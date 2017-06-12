@@ -23,6 +23,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ ice_devel_packages }}"
+  when: 'ice_install_devel | default(True)'
 
 - name: zeroc ice | install ice pip dependencies
   become: yes
