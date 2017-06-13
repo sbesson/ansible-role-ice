@@ -34,6 +34,7 @@ ansible:
   host_vars:
     ice-35:
       ice_version: "3.5"
+      ice_install_devel: False
     ice-36:
       ice_version: "3.6"
 

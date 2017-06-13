@@ -23,6 +23,7 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ ice_devel_packages }}"
+  when: ice_install_devel
 
 - name: zeroc ice | install ice pip dependencies
   become: yes
@@ -30,25 +31,25 @@
     name: "{{ item }}"
     state: present
   with_items: "{{ ice_pip_dependencies }}"
-  when: "ice_pip_dependencies and (ice_python_wheel is not defined)"
+  when: "ice_pip_dependencies and (ice_python_wheel | length < 1)"
 
 - name: zeroc ice | pip install packages
   become: yes
   pip:
     name: "{{ ice_pip_packages }}"
     state: present
-  when: "ice_pip_packages and (ice_python_wheel is not defined)"
+  when: "ice_pip_packages and (ice_python_wheel | length < 1)"
 
 - name: zeroc ice | install python-pip for wheel
   become: yes
   yum:
     name: python-pip
     state: present
-  when: "ice_python_wheel is defined"
+  when: "ice_python_wheel | length >= 1"
 
 - name: zeroc ice | install ice wheel package
   become: yes
   pip:
     name: "{{ ice_python_wheel }}"
     state: present
-  when: "ice_python_wheel is defined"
+  when: "ice_python_wheel | length >= 1"

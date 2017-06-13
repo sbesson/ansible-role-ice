@@ -11,6 +11,7 @@ Required:
 - `ice_version`: The Ice version, either 3.5 or 3.6
 
 Optional (expert users only):
+- `ice_install_devel`: Install Ice development packages, default `True`
 - `ice_python_wheel`: URL to a python wheel package to be installed.
   You can use this to provide a precompiled ice-py package for 3.6 as an alternative to automatically compiling from the source package.
 
