@@ -1,7 +1,7 @@
 ---
 # vars file for roles/ice
 
-ice_repourl: https://zeroc.com/download/rpm/el7/zeroc-ice-el7.repo
+ice_repourl: https://zeroc.com/download/Ice/3.6/el7/zeroc-ice3.6.repo
 ice_runtime_packages:
   - ice-all-runtime
 ice_devel_packages:
