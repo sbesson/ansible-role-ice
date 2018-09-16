@@ -1,5 +1,5 @@
 ---
 # defaults file for ice
 
-ice_install_devel: True
+ice_install_devel: true
 ice_python_wheel: ''
