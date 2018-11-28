@@ -1,0 +1,31 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ice-35
+    image: centos
+    image_version: 7
+  - name: ice-36
+    image: centos
+    image_version: 7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  inventory:
+    host_vars:
+      ice-35:
+        ice_version: "3.5"
+        ice_install_devel: false
+      ice-36:
+        ice_version: "3.6"
+scenario:
+  name: default
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
