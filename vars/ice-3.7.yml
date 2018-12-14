@@ -1,0 +1,20 @@
+---
+# vars file for roles/ice
+
+ice_repourl: https://zeroc.com/download/Ice/3.7/el7/zeroc-ice3.7.repo
+ice_runtime_packages:
+  - ice-all-runtime
+ice_devel_packages:
+  - ice-all-devel
+ice_pip_dependencies:
+  - gcc
+  - gcc-c++
+  - libdb-utils
+  - bzip2-devel
+  - expat-devel
+  - openssl-devel
+  - python-devel
+  - python-pip
+ice_pip_packages:
+  # We want the highest minor release
+  - "zeroc-ice>=3.7,<3.8"

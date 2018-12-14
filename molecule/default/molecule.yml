@@ -6,7 +6,7 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: ice-35
+  - name: ice-37
     image: centos
     image_version: 7
   - name: ice-36
@@ -18,9 +18,8 @@ provisioner:
     name: ansible-lint
   inventory:
     host_vars:
-      ice-35:
-        ice_version: "3.5"
-        ice_install_devel: false
+      ice-37:
+        ice_version: "3.7"
       ice-36:
         ice_version: "3.6"
 scenario:
