@@ -11,7 +11,7 @@ Role Variables
 --------------
 
 Required:
-- `ice_version`: The Ice version, either 3.6 or 3.7
+- `ice_version`: The Ice version supported 3.6
 
 Optional (expert users only):
 - `ice_install_devel`: Install Ice development packages, default `True`
