@@ -7,8 +7,7 @@ lint:
   name: yamllint
 platforms:
   - name: ice-36
-    image: centos
-    image_version: 7
+    image: centos:7
 provisioner:
   name: ansible
   lint:
