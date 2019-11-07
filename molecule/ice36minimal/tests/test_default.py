@@ -9,13 +9,15 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 def test_ice_version(host):
     assert host.exists('icegridnode')
     c = host.run('icegridnode --version')
+    assert c.rc == 0
     assert c.stderr.startswith('3.6.')
 
 
 def test_icepy_version(host):
-    c = host.run('python -c "import Ice; print Ice.stringVersion()"')
-    assert c.stdout.startswith('3.6.')
+    c = host.run('python -c "import Ice"')
+    assert c.rc == 1
+    assert 'No module named Ice' in c.stderr
 
 
 def test_ice_devel(host):
-    assert host.package('ice-all-devel').is_installed
+    assert not host.package('ice-all-devel').is_installed

@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+  options:
+    role-file: molecule/resources/requirements.yml
+driver:
+  name: docker
+lint:
+  name: yamllint
+platforms:
+  - name: ice36minimal
+    image: centos:7
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+  playbooks:
+    converge: ../resources/playbook.yml
+  inventory:
+    host_vars:
+      ice36minimal:
+        ice_install_devel: false
+        ice_install_python: false
+scenario:
+  name: ice36minimal
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
