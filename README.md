@@ -10,9 +10,6 @@ Install Zeroc Ice.
 Role Variables
 --------------
 
-Required:
-- `ice_version`: The Ice version supported 3.6
-
 Optional (expert users only):
 - `ice_install_devel`: Install Ice development packages, default `True`
 - `ice_install_python`: Install Ice Python globally, default `True`
@@ -32,7 +29,6 @@ Example Playbook
     - hosts: localhost
       roles:
         - role: ome.ice
-          ice_version: "3.6"
 
 
 Author Information
