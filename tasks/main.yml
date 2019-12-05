@@ -2,3 +2,19 @@
 
 - import_tasks: redhat.yml
   when: ansible_os_family | lower == 'redhat'
+
+- import_tasks: debian.yml
+  when: ansible_os_family | lower == 'debian'
+
+- name: zeroc ice | symlink ubuntu
+  become: true
+  file:
+    force: true
+    path: "{{ ice_binaries_symlink_dest  }}/{{ item }}"
+    src: /opt/ice/bin/{{ item }}
+    state: link
+  when: 'ice_binaries_symlink_dest | length > 0'
+  with_items:
+    - glacier2router
+    - icegridadmin
+    - icegridnode
