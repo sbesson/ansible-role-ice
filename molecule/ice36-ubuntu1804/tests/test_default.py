@@ -16,4 +16,4 @@ def test_ice_version(host, binary):
     assert host.exists('icegridnode')
     c = host.run('icegridnode --version')
     assert c.rc == 0
-    assert c.stderr.startswith('3.6.')
+    assert c.stderr.startswith('3.6.5')
