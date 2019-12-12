@@ -1,2 +1,3 @@
 ---
 - src: ome.basedeps
+- src: ome.deploy_archive

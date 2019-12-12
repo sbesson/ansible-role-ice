@@ -3,4 +3,3 @@
   hosts: all
   roles:
     - role: ansible-role-ice
-      ice_version: "3.6"

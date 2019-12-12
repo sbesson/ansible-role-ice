@@ -14,6 +14,7 @@ script:
 env:
   - SCENARIO=ice36all
   - SCENARIO=ice36minimal
+  - SCENARIO=ice36-ubuntu1804
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/

@@ -6,24 +6,23 @@ Role Name
 
 Install Zeroc Ice.
 
+On Ubuntu this only installs the Ice binaries and required libraries under `/opt/ice/bin` (note this is a symlink).
+
 
 Role Variables
 --------------
 
-Required:
-- `ice_version`: The Ice version supported 3.6
-
 Optional (expert users only):
 - `ice_install_devel`: Install Ice development packages, default `True`
-- `ice_install_python`: Install Ice Python globally, default `True`
-- `ice_python_wheel`: URL to a python wheel package to be installed.
+- `ice_install_python`: Install Ice Python globally, default `True`, ignored on Ubuntu (always `False`)
+- `ice_python_wheel`: URL to a python wheel package to be installed, ignored on Ubuntu
   You can use this to provide a precompiled ice-py package for 3.6 as an alternative to automatically compiling from the source package.
+- `ice_binaries_symlink_dest`: Symlink the Ice binaries required by OMERO into this directory e.g. `/usr/local/bin` (Ubuntu only, must exist, if empty don't create symlinks)
 
 
 Notes
 -----
 Note that 3.6 requires ice-python to be installed using pip, and will result in the installation of several development tools and libraries unless `ice_python_wheel` is provided.
-The pip version is required in major.minor.patch form so `vars/ice-3.6.yml` will need to be updated whenever there is a new patch release.
 
 
 Example Playbook
@@ -32,7 +31,6 @@ Example Playbook
     - hosts: localhost
       roles:
         - role: ome.ice
-          ice_version: "3.6"
 
 
 Author Information

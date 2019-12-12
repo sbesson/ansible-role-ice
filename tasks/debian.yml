@@ -1,0 +1,14 @@
+---
+# tasks file for roles/ice
+
+# Note download is handled by the ome.deploy_archive dependency
+
+- name: zeroc ice | dependencies
+  become: true
+  apt:
+    name:
+      - libdb5.3
+      - libdb5.3++
+      - libexpat1
+      - libmcpp0
+      - openssl
