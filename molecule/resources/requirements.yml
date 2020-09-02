@@ -1,3 +1,4 @@
 ---
 - src: ome.basedeps
+- src: ome.java
 - src: ome.deploy_archive
