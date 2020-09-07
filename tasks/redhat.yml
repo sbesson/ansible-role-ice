@@ -18,7 +18,6 @@
       - libfreeze3.6-c++
       - libice3.6-c++
       - libicestorm3.6
-      - php-ice
     state: present
 
 - name: zeroc ice | install devel packages
