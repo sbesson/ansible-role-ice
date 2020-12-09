@@ -20,7 +20,7 @@ dependencies:
   - role: ome.java
   # For systems with no upstream binaries most of the work is done here
   - role: ome.deploy_archive
-    become: yes
+    become: true
     vars:
       deploy_archive_dest_dir: /opt
       deploy_archive_src_url: "https://github.com/ome/zeroc-ice-ubuntu1804/\
